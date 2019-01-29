@@ -7,7 +7,12 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button (click)="Reproducir()">
-    Reproducir
-  </button>
+  <ion-list *ngFor="let cancion of canciones">
+    <ion-item (click)="ReproducirCancion(cancion)">
+        <h2>{{cancion.titulo}}</h2>
+        <h4>{{cancion.grupo}}</h4>
+        <ion-icon *ngIf="cancion.reproduciendo" name="pause" item-right></ion-icon>
+        <ion-icon *ngIf="!cancion.reproduciendo" name="play" item-right></ion-icon>
+    </ion-item>
+  </ion-list>
 </ion-content>

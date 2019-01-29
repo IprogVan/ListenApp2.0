@@ -12,6 +12,8 @@ import firebaseConfig from './firebase'
 import { AngularFireModule } from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth'
 import {NativeAudio} from '@ionic-native/native-audio';
+import { Proveedor1Provider } from '../providers/proveedor1/proveedor1';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {NativeAudio} from '@ionic-native/native-audio';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +40,8 @@ import {NativeAudio} from '@ionic-native/native-audio';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    NativeAudio
+    NativeAudio,
+    Proveedor1Provider
   ]
 })
 export class AppModule {}
